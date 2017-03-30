@@ -1,0 +1,20 @@
+/*
+
+	Title: Beautiful responsive layouts with Flexbox
+	Author: Steven Roberts
+
+	CSS Starts Yey :)
+
+*/
+
+/* Import Sanatize to reset browser defaults - Short URL(http://srt.lt/Q6P0nY) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css');
+
+/* Import Roboto and Roboto-slab from Google Fonts - Short URL (http://srt.lt/b4tY7) */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box; /* Put padding on the inside of elements */
+}

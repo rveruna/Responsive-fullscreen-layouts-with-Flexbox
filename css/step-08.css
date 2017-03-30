@@ -1,0 +1,59 @@
+/*
+
+	Title: Beautiful responsive layouts with Flexbox
+	Author: Steven Roberts
+
+	Same as the previous step we're editing the HTML for this step.
+
+*/
+
+/* Import Sanatize to reset browser defaults - Short URL(http://srt.lt/Q6P0nY) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css');
+
+/* Import Roboto and Roboto-slab from Google Fonts - Short URL (http://srt.lt/b4tY7) */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box; /* Put padding on the inside of elements */
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px; /* Our base font-size */
+	line-height: 1.75; /* Line height assumes an almost rem value but is dynamic to the font-size */
+	font-weight: 300; /* Use the included weight */
+	color: #332F21; /* Don't use black it's too harsh */
+
+	display: flex; /* Set body to be a flex container */
+	align-items: center; /* Vertically centre content in the viewport */
+	justify-content: center; /* Horizontally centre content in the viewport */
+
+	min-height: 100vh; /* Force vertical centering since the content won't always be taller than the viewport */
+	padding: 2rem; /* Using rem values as they don't cascade like em units and are not fixed units like pixels */
+
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../images/splash.jpg'); /* Multiple Background images, semi-transparent gradient used as a fallback for Edge */
+	background-position: center center;
+	background-size: cover;
+}
+
+@supports(background-blend-mode: multiply) { /* Use a blend mode on the background in browser that support it */
+
+	body {
+		background-image: linear-gradient(#4A4A4A, #212121), url('../images/splash.jpg'); /* Multiple background images, Gradient overlay and the Image */
+		background-blend-mode: multiply; /* Blending the Gradient with the Background Image (can't use black to blend) */
+	}
+
+}
+
+.card {
+	display: flex; /* Sets entrire card element to be a flex container */
+	flex-direction: column; /* Forces elements to align along the vertical axis */
+
+	max-width: 62rem; /* base-spacing-unit multiplied 35, converted to rem unites and rouned up */
+	min-height: 75vh; /* Always at least 75% of the viewport */
+
+	background-color: white; /* Set background colour of our content card */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow */
+}
